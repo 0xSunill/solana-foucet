@@ -1,9 +1,11 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { useWallet } from '@solana/wallet-adapter-react';
+import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 
+import { PublicKey } from '@solana/web3.js';
 const Faucet = () => {
     const { publicKey, connected } = useWallet();
+    const { connection } = useConnection();
     const [walletAddress, setWalletAddress] = useState('');
 
 
@@ -15,8 +17,9 @@ const Faucet = () => {
 
     const sendAirdrop = async () => {
         try {
-            const signature = await connection.requestAirdrop(walletAddress, 1e9);
-            await connection.confirmTransaction(signature);
+            const pubKey = new PublicKey(walletAddress);
+            const signature = await connection.requestAirdrop(pubKey, 1000000000);
+            // await connection.confirmTransaction(signature, 'confirmed');
             alert("✅ Airdrop request sent!");
         } catch (error) {
             console.error(error);
