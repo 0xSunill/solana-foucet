@@ -19,7 +19,7 @@ const Faucet = () => {
         try {
             const pubKey = new PublicKey(walletAddress);
             const signature = await connection.requestAirdrop(pubKey, 1000000000);
-            // await connection.confirmTransaction(signature, 'confirmed');
+        
             alert("✅ Airdrop request sent!");
         } catch (error) {
             console.error(error);
