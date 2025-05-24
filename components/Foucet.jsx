@@ -32,6 +32,7 @@ const Faucet = () => {
             <h1 className="font-bold text-5xl text-center text-white">Enter your wallet Address</h1>
             <h1 className="font-bold text-4xl text-center text-white">🤑And get 1 SOL🤑</h1>
 
+                
             <input
                 type="text"
                 placeholder="Enter wallet address"

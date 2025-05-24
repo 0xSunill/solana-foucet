@@ -9,7 +9,6 @@ export default function Home() {
     <div className="text-3xl ">
       <Nav />
       <Foucet />
-      
     </div>
   );
 }

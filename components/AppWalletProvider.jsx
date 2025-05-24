@@ -37,10 +37,7 @@ export default function AppWalletProvider({ children }) {
       <ConnectionProvider endpoint={endpoint} >
         <WalletProvider wallets={wallets} autoConnect>
           <WalletModalProvider>
-            
-
             {children}
-
           </WalletModalProvider>
         </WalletProvider>
       </ConnectionProvider>
